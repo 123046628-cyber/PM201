@@ -10,16 +10,7 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      <Image source={require('./assets/wave.png')}/> {/* Etiqueta de auto cierre */}
-      <Text> Hola mundo React Native! </Text>
-      <Text> ------------------- </Text>
-      <Saludo/> {/* Componente propio */}
-      <Text> ------------------- </Text>
-      <Saludo2/> {/* Componente propio con tres elementos */}
-      <Text> ------------------- </Text>
-      <Perfil/> {/* Componente propio con cuatro elementos */}
-
-      <StatusBar style="auto" />
+      <Perfil nombre="Zoe Huerta" carrera="Ing. en Sistemas" materia="Móvil" cuatri="9no"/>
 
     </View>
   );
