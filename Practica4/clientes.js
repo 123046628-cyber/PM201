@@ -26,7 +26,7 @@ function mostrarMenuClientes() {
     console.log(`---- Clientes ----
   1. Ver productos disponibles
   2. Crear nuevo pedido
-  3. Ver mis pedidos (con estados)
+  3. Ver mis pedidos
   4. Ver total acumulado
   5. Filtros de productos
   6. Filtros de pedidos
