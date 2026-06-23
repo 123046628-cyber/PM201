@@ -6,6 +6,7 @@ import TarjetasScreen from './TarjetasScreen';
 import Componente1 from './Componente1';
 import PressableScreen from './PressableScreen';
 import SwitchScreen from './SwitchScreen';
+import SafeAreaScroolScren from './SafeAreaScroolScren';
 
 /* Zona 2: Main - Componentes */
 export default function App() {
@@ -18,6 +19,10 @@ export default function App() {
             return <Componente1 />;
         case 'pressable':
             return <PressableScreen />;
+        case 'switch':
+            return <SwitchScreen />;
+        case 'safeArea':
+            return <SafeAreaScroolScren />;
         default:
             return (
                 <View>
@@ -28,6 +33,10 @@ export default function App() {
                     <Button title="Practica Componente 1" onPress={() => setScreen('componente1')} />
 
                     <Button title="Practica Pressable" onPress={() => setScreen('pressable')} />
+                    
+                    <Button title="Practica Switch" onPress={() => setScreen('switch')} />
+
+                    <Button title="Practica Safe Area View - Scroll View" onPress={() => setScreen('safeArea')} />
 
 
                 </View>
