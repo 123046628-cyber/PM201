@@ -5,30 +5,33 @@ export default function PressableScreen(){
     const [contador, setContador] = useState(0);
     const [mensaje, setMensaje] = useState('');
 
-    return (
+    return(
         <View style={styles.container}>
-            <Text style={styles.titulo}> Componente Pressable </Text>
+            <Text> Componente Pressable</Text>
+            <Pressable
+                onPress={() => setContador(contador + 1)}
+                onLongPress={() => {
+                    setContador(0);
+                    setMensaje('Contador reiniciado');
+                }}
+                onPressIn={() => setMensaje('Boton presionado')}
+                onPressOut={() => setMensaje('Boton liberado')}
 
-            <Pressable 
-            onPress={() => setContador(contador + 1)}
-            onLongPress={() => {setContador(0); setMensaje('Contador reiniciado');}}
-            onPressIn={() => setMensaje('Boton presionado')}
-            onPressOut={() => setMensaje('Boton libre')}
-            
-            style = {({pressed}) => [styles.boton, pressed ? styles.botonPresionado 
-                : styles.botonNormal
-            ]}>
+                style={({pressed}) => [
+                    styles.boton,
+                    pressed ? styles.botonPresionado 
+                    : styles.botonNormal
+                ]}>
+                <Text style={styles.textoBoton}>Presioname</Text>
+                </Pressable>
 
-            <Text style={styles.textoBoton}> Presioname </Text>
-            </Pressable>
-
-            <Text style={styles.texto}> Contador: {contador} </Text>
-            <Text style={styles.texto}> Estado: {mensaje} </Text>
-
-            <Text style={styles.texto}> Manten presionado el boton para reiniciar el contador</Text>
+                <Text style={styles.texto}> Contador {contador}</Text>
+                <Text style={styles.texto}>Estado: {mensaje}</Text>
+                <Text> Manten presionado el boton para reiniciar el contador</Text>
 
         </View>
     )
+
 }
 
 const styles = StyleSheet.create({
