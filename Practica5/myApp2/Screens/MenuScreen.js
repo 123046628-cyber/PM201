@@ -1,14 +1,16 @@
 /* Zona 1: Importaciones de archivos y componentes  */
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button} from 'react-native';
+import { StyleSheet, Text, View, Image, Button, SafeAreaView, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import TarjetasScreen from './TarjetasScreen';
-import Componente1 from './Componente1';
+import Componete1 from './Componente1';
 import PressableScreen from './PressableScreen';
 import SwitchScreen from './SwitchScreen';
 import SafeAreaScroolScren from './SafeAreaScroolScren';
 import TextInputScreen from './TextInputScreen';
 import AlertScreen from './AlertScreen';
+import FlatListScreen from './FlatListScreen';
+import SectionListScreen from './SectionListScreen';
 
 /* Zona 2: Main - Componentes */
 export default function App() {
@@ -29,8 +31,24 @@ export default function App() {
             return <TextInputScreen />;
         case 'alert':
             return <AlertScreen />;
+        case 'flat':
+            return (
+                <SafeAreaView style={{ flex: 1 }}>
+                    <FlatListScreen volverMenu={() => setScreen('menu')}/>
+                </SafeAreaView>
+            );
+
+        case 'section':
+            return (
+                <SafeAreaView style={{ flex: 1 }}>
+                    <SectionListScreen volverMenu={() => setScreen('menu')}/>
+                </SafeAreaView>
+            );
+
         default:
             return (
+                <SafeAreaView>
+                <ScrollView>
                 <View>
                     <Text> Menu de Prácticas </Text>
 
@@ -48,8 +66,14 @@ export default function App() {
 
                     <Button title="Practica Alert" onPress={() => setScreen('alert')} />
 
+                    <Button title='Practica FlatList' onPress={() => setScreen('flat')}/>
+
+                    <Button title='Practica SectionList' onPress={() => setScreen('section')}/>
+
 
                 </View>
+                </ScrollView>
+                </SafeAreaView>
             )
 
   return (
