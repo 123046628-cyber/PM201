@@ -14,6 +14,7 @@ import SectionListScreen from './SectionListScreen';
 import ImagenFondo from './ImagenFondoScreen';
 import { SplashScreen } from './SplashScreen';
 import {Home} from './HomeScreen';
+import ComponentesNativosScreen from './ComponetesNativosScreen';
 
 /* Zona 2: Main - Componentes */
 export default function App() {
@@ -65,6 +66,9 @@ export default function App() {
         case 'imagenFondo':
             return <ImagenFondo volverMenu={() => setScreen('menu')}/>;
 
+        case 'activitykeyboard':
+            return <ComponentesNativosScreen/>
+
         default:
             return (
                 <SafeAreaView>
@@ -93,7 +97,8 @@ export default function App() {
                     <Button title='Práctica Splash' onPress={() => setScreen('splashScreen')}/>
 
                     <Button title='Práctica ImagenBg' onPress={() => setScreen('imagenFondo')}/>
-
+                    
+                    <Button title='Practica ActivityIndicator y KeyboardAvoiding' onPress={() => setScreen('activitykeyboard')}/>
 
                 </View>
                 </ScrollView>
