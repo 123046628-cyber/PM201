@@ -15,6 +15,7 @@ import ImagenFondo from './ImagenFondoScreen';
 import { SplashScreen } from './SplashScreen';
 import {Home} from './HomeScreen';
 import ComponentesNativosScreen from './ComponetesNativosScreen';
+import ModalScreen from './ModalScreen';
 
 /* Zona 2: Main - Componentes */
 export default function App() {
@@ -69,6 +70,9 @@ export default function App() {
         case 'activitykeyboard':
             return <ComponentesNativosScreen/>
 
+        case 'modal':
+            return <ModalScreen/>
+
         default:
             return (
                 <SafeAreaView>
@@ -99,6 +103,8 @@ export default function App() {
                     <Button title='Práctica ImagenBg' onPress={() => setScreen('imagenFondo')}/>
                     
                     <Button title='Practica ActivityIndicator y KeyboardAvoiding' onPress={() => setScreen('activitykeyboard')}/>
+
+                    <Button title='Practica Modal & Bottom Sheet'  onPress={() => setScreen('modal')}/>
 
                 </View>
                 </ScrollView>
